@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "quick.db": "^6.3.2",
+    "canvas": "^2.6.0"
   },
   "engines": {
     "node": "8.x"
