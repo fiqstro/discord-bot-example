@@ -3,6 +3,11 @@ const client = new Discord.Client();
 const fs = require("fs");
 const db = require("quick.db")
 
+// Please delete this code if you are not using Glitch.
+const http = require("http");
+const express = require("express"); 
+const app = express(); 
+
 
 const prefix = "YOUR-PREFIX"
 const token = "YOUR-TOKEN" // It is reccomended that you keep your token in a seperate file from bot.js
@@ -10,6 +15,9 @@ const token = "YOUR-TOKEN" // It is reccomended that you keep your token in a se
 client.on("ready", () => {
   console.log("Bot is connected!");
 });
+
+
+
 
 client.on("message", message => {
   if (message.author.bot) return;
@@ -27,5 +35,13 @@ client.on("message", message => {
   }
   
 });
+
+// Please delete this code if you are not using Glitch.
+// This keeps the bot online 24/7
+// It is reccomended that you use Uptime Robot also, because the bot will not go offline randomly.
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
 
 client.login(token);
