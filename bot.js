@@ -12,10 +12,11 @@ client.on("ready", () => {
 client.on("message", message => {
   if (message.author.bot) return;
   if (message.content.indexOf(prefix) !== 0) return;
-
+  
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-
+// This is the command handler, it will keep all of your commands into seperate files.
+// This will organize your commands.
   try {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
