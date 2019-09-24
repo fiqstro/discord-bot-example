@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
+const db = require("quick.db")
+
 
 const prefix = "YOUR-PREFIX"
 const token = "YOUR-TOKEN" // It is reccomended that you keep your token in a seperate file from bot.js
@@ -23,6 +25,7 @@ client.on("message", message => {
   } catch (err) {
     console.error(err);
   }
+  
 });
 
 client.login(token);
