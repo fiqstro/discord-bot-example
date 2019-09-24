@@ -1,1 +1,7 @@
-
+`Help Menu`
+Ping - shows the ping
+Say - says something you said
+Kick - kicks a member
+Ban - Bans a member
+Purge - purges 100 messages
+==========================
