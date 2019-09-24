@@ -4,4 +4,4 @@ Say - says something you said
 Kick - kicks a member
 Ban - Bans a member
 Purge - purges 100 messages
-==========================
+Prefix - changes your prefix
