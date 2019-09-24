@@ -8,6 +8,7 @@ const http = require("http");
 const express = require("express"); 
 const app = express(); 
 
+const pf = new db.table('prefix') // Defining table for guild prefix.
 
 const prefix = "YOUR-PREFIX"
 const token = "YOUR-TOKEN" // It is reccomended that you keep your token in a seperate file from bot.js
@@ -17,7 +18,7 @@ client.on("ready", () => {
 });
 
 
-client.on("message", message => {
+client.on("message", async message => {
   if (message.author.bot) return;
   if (message.content.indexOf(prefix) !== 0) return;
   
@@ -32,7 +33,11 @@ client.on("message", message => {
     console.error(err);
   }
   
-});
+  const fetched = await pf.fetch(`prefix_${message.guild.id}`)
+  if (fetched === null) prefix = "YOUR-PREFIX"
+  else prefix = fetched; 
+  // Allowing the db to change the prefix.
+})
 
 // Please delete this code if you are not using Glitch.
 // This keeps the bot online 24/7
