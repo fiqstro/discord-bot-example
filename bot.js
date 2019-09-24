@@ -17,6 +17,11 @@ client.on("ready", () => {
   console.log("Bot is connected!");
 });
 
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'welcome-channel');
+  if (!channel) return;
+  channel.send(`Welcome to the server, ${member}`);
+});
 
 client.on("message", async message => {
   if (message.author.bot) return;
