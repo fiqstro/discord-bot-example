@@ -16,7 +16,7 @@ client.on("ready", () => {
   console.log("Bot is connected!");
 });
 
-
+const commands = fs.readFileSync('./txtfiles/help.txt')
 
 
 client.on("message", message => {
