@@ -10,7 +10,8 @@
     "discord.js": "^11.4.2",
     "express": "^4.16.4",
     "quick.db": "^6.3.2",
-    "canvas": "^2.6.0"
+    "canvas": "^2.6.0",
+     "ms": "^2.1.1"
   },
   "engines": {
     "node": "8.x"
